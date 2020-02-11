@@ -158,20 +158,22 @@ def playAI():
 
 grid()
 n=1
+c=0
 t=0
-while w==0 and n<9:
+while w==0 and c<9:
     if t==0:
         aiFirst(n)
         grid()
+        n+=1
     elif t==1:
         playAI()
         grid()
-        n+=1
+    c+=1
     check()
     t=(t+1)%2
 
     
-if n<10:
+if c<9:
     print("Player %s Wins"%w)
 else:
     print("Draw")
